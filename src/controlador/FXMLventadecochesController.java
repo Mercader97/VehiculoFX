@@ -112,7 +112,9 @@ public class FXMLventadecochesController implements Initializable {
         //ArrayList<Vehiculo> lv = new ArrayList<Vehiculo>;
         // Ponemos las opciones del combobox combustible  diesel, gasolina, hibrido, electrico, GLP;
         //ToggleGroup grupo = new ToggleGroup();
-        cb_tipocombustible.getItems().addAll(Tipocombustible.Combustible.GLP, Tipocombustible.Combustible.diesel, Tipocombustible.Combustible.electrico, Tipocombustible.Combustible.gasolina, Tipocombustible.Combustible.hibrido);
+        //cb_tipocombustible.getItems().addAll(Tipocombustible.Combustible.GLP, Tipocombustible.Combustible.diesel, Tipocombustible.Combustible.electrico, Tipocombustible.Combustible.gasolina, Tipocombustible.Combustible.hibrido);
+        //vale de las dos maneras meter los enums en combox
+        cb_tipocombustible.getItems().addAll(Tipocombustible.Combustible.values());
         cbtipocarroceria.getItems().addAll(Tipocarroceria.Berlina, Tipocarroceria.Compacto, Tipocarroceria.Descapotable, Tipocarroceria.Monovolumen, Tipocarroceria.Suv);
         cbtipocarroceria.setVisible(false);
         tfnumruedas.setVisible(false);
