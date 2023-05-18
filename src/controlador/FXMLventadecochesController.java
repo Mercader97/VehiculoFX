@@ -88,7 +88,7 @@ public class FXMLventadecochesController implements Initializable {
     public double precio;
     public Medidas medida;
     public float tamcaja;
-    
+    public int indice;
     
     @FXML
     private TextField tfancho;
@@ -102,6 +102,8 @@ public class FXMLventadecochesController implements Initializable {
     private Text textotipocarroceria;
     @FXML
     private Text textoNruedas;
+    @FXML
+    private Button Borrarseleccionado;
     /**
      * Initializes the controller class.
      */
@@ -392,6 +394,23 @@ public class FXMLventadecochesController implements Initializable {
             }
         }
         return true;
+    }
+
+    @FXML
+    private void Borrarseleccionado(ActionEvent event) {
+        
+        indice =  lvcoches.getSelectionModel().getSelectedIndex();
+                 
+         if (indice >= 0) {
+            // Eliminar el vehículo de la lista observable
+            
+            lvcoches1.remove(indice);
+            lvcoches.setItems(lvcoches1);
+        }
+        
+       
+        
+       
     }
 
 }
