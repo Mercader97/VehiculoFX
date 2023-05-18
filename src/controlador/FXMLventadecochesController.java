@@ -79,17 +79,6 @@ public class FXMLventadecochesController implements Initializable {
     private RadioButton rbindustrial;
     @FXML
     private ToggleGroup grupo;
-    
-    
-    
-
-    // variable de uso
-    public Integer ano, km, cv, numrueda;
-    public double precio;
-    public Medidas medida;
-    public float tamcaja;
-    public int indice;
-    
     @FXML
     private TextField tfancho;
     @FXML
@@ -104,6 +93,17 @@ public class FXMLventadecochesController implements Initializable {
     private Text textoNruedas;
     @FXML
     private Button Borrarseleccionado;
+    
+    
+
+    // variable de uso
+    public Integer ano, km, cv, numrueda;
+    public double precio;
+    public Medidas medida;
+    public float tamcaja;
+    public int indice;
+    
+    
     /**
      * Initializes the controller class.
      */
