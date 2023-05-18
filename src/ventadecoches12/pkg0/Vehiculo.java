@@ -7,8 +7,15 @@ package ventadecoches12.pkg0;
 import java.util.Objects;
 
 /**
- *
- * @author ivani
+
+ * Esta clase define el objeto vehiculo como abstracto, de esta forma se va a usar de guia para los objetos moto, turismo e industrial
+
+ * @author: Ivan Mercader
+
+ * @version: 18/05/2023
+
+ * @see <a href = "https://github.com/Mercader97/VehiculoFX" /> GitHub </a>
+
  */
 public abstract class Vehiculo {
     
@@ -25,7 +32,13 @@ public abstract class Vehiculo {
     protected Tipocombustible.Combustible combustible;
     protected Medidas medidas;
 
-    // contructor por defecto, con parametros y copia
+    /**
+
+     * Constructor por defecto, parametros y en copia
+
+     * @param 
+
+     */
     
     public Vehiculo () {
          marca = "null";
@@ -235,7 +248,13 @@ public abstract class Vehiculo {
     }
     
     
-    // metodo para pasar de kw a cv
+    /**
+
+     * Metodo para pasar de ls potencia del coche de cv kw
+
+     * devuelve la conversion en double
+
+     */
     
     private double getPotenciakw() {
       return this.potencia * 1.34; 

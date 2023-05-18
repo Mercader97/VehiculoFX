@@ -84,9 +84,10 @@ public class FXMLventadecochesController implements Initializable {
     
 
     // variable de uso
-    public Integer ano, km, cv, numrueda, tamcaja;
+    public Integer ano, km, cv, numrueda;
     public double precio;
     public Medidas medida;
+    public float tamcaja;
     
     
     @FXML
@@ -119,6 +120,8 @@ public class FXMLventadecochesController implements Initializable {
         textotipocarroceria.setVisible(false);
     }
 
+    
+    //depende del radio button que seleccionamos ponemos en visible unos campos u otros, pedido en el enunciado
     @FXML
     private void seleccionamoto(ActionEvent event) {
 
@@ -154,10 +157,15 @@ public class FXMLventadecochesController implements Initializable {
     }
 
     @FXML
+    
+    // va ligado mediante scenebuilder al boton guardar
     private void guardardatos(ActionEvent event) {
         //System.out.println(tfmarca.getText());
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-
+        
+        // segun la opcion seleccionada del radio button creamos un objeto de tipo moto y lo añadimos al list view (ultimas lineas), antes de crearlo filtramos cada campo para evitar errores
+        // ademas si algun campo de cuadra con lo que nos pide el constructor del objeto le mostramos un mensaje de alerta al usuario
+        
         if (rbmoto.isSelected()) {
             
             if (isNumeric(tfano.getText())) {
@@ -278,7 +286,7 @@ public class FXMLventadecochesController implements Initializable {
             
             lvcoches1.add(new Turismo(tfmarca.getText(), tfmodelo.getText(), ano, km, cv, precio, cb_tipocombustible.getValue(), medida, cbtipocarroceria.getValue()));
             lvcoches.setItems(lvcoches1);
-            //Vehiculo coche = new Turismo("Seat", "leon", 2019, 5212, 125, 2000.00, Tipocombustible.Combustible.diesel,new Medidas(1,2,4), Tipocarroceria.Suv);
+            
         } else if (rbindustrial.isSelected()) {
             
              if (isNumeric(tfano.getText())) {
@@ -331,14 +339,18 @@ public class FXMLventadecochesController implements Initializable {
                 alerta.showAndWait();
             }
             
-            if (isNumeric(tftamcaja.getText())) {
-               tamcaja = Integer.parseInt(tftamcaja.getText());
-            } else {
+            
+            
+            try {
+                Float.parseFloat(tftamcaja.getText());
+                tamcaja = Float.parseFloat(tftamcaja.getText());
+            } catch (NumberFormatException e) {
                 alerta.setTitle("Error");
                 alerta.setHeaderText("Error Introduccion datos");
-                alerta.setContentText("Las ruedas deben ser numeros enteros");
+                alerta.setContentText("El precio es un numero seguido de . y 2 decimales");
                 alerta.showAndWait();
             }
+            
             
             lvcoches1.add(new Industrial(tfmarca.getText(), tfmodelo.getText(), ano, km, cv, precio, cb_tipocombustible.getValue(), medida, tamcaja));
             lvcoches.setItems(lvcoches1);
@@ -346,7 +358,9 @@ public class FXMLventadecochesController implements Initializable {
             System.out.println("Ninguno");
         }
     }
-
+    
+    // va ligado mediante scenebuilder al boton borrar
+    
     @FXML
     private void borrartodo(ActionEvent event) {
         
@@ -358,6 +372,14 @@ public class FXMLventadecochesController implements Initializable {
         
     }
 
+    
+    /**
+
+     * Metodo para saber si un string es un numero
+
+     * @param s El parámetro s es un string que le pasamos y que queremos saber si es un numero
+
+     */
     public static boolean isNumeric(String s) {
         if (s == null || s.equals("")) {
             return false;
