@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="705.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.FXMLventadecochesController">
+   <children>
+      <Pane fx:id="Panedatos" layoutX="40.0" layoutY="20.0" prefHeight="677.0" prefWidth="960.0">
+         <children>
+            <Text layoutX="22.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecciona Tipo de Vehiculo" />
+            <ComboBox fx:id="cb_tipocombustible" layoutX="10.0" layoutY="77.0" prefHeight="25.0" prefWidth="180.0" promptText="Tipo de Combustible" />
+            <TextField fx:id="tfmarca" layoutX="23.0" layoutY="147.0" />
+            <TextField fx:id="tfmodelo" layoutX="197.0" layoutY="210.0" />
+            <TextField fx:id="tfano" layoutX="21.0" layoutY="210.0" />
+            <TextField fx:id="tfkilometros" layoutX="197.0" layoutY="271.0" />
+            <TextField fx:id="tfcv" layoutX="23.0" layoutY="271.0" />
+            <TextField fx:id="tfprecio" layoutX="19.0" layoutY="467.0" />
+            <TextField fx:id="tfancho" layoutX="22.0" layoutY="335.0" prefHeight="25.0" prefWidth="89.0" />
+            <Button fx:id="btguardar" layoutX="25.0" layoutY="580.0" mnemonicParsing="false" onAction="#guardardatos" text="Guardar" />
+            <Button fx:id="btborrar" layoutX="97.0" layoutY="580.0" mnemonicParsing="false" onAction="#borrartodo" text="Borrar todo" />
+            <ListView fx:id="lvcoches" layoutX="379.0" layoutY="41.0" prefHeight="615.0" prefWidth="566.0" />
+            <ComboBox fx:id="cbtipocarroceria" layoutX="33.0" layoutY="404.0" prefWidth="150.0" />
+            <TextField fx:id="tftamcaja" layoutX="33.0" layoutY="404.0" />
+            <TextField fx:id="tfnumruedas" layoutX="33.0" layoutY="404.0" />
+            <RadioButton id="1" fx:id="rbturismo" layoutX="22.0" layoutY="47.0" mnemonicParsing="false" onAction="#seleccionaturismo" text="Turismo">
+               <toggleGroup>
+                  <ToggleGroup fx:id="grupo" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton id="1" fx:id="rbmoto" layoutX="111.0" layoutY="47.0" mnemonicParsing="false" onAction="#seleccionamoto" text="Moto" toggleGroup="$grupo" />
+            <RadioButton id="1" fx:id="rbindustrial" layoutX="201.0" layoutY="47.0" mnemonicParsing="false" onAction="#seleccionaindustrial" text="Industrial" toggleGroup="$grupo" />
+            <Text layoutX="538.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coches" wrappingWidth="173.3367919921875" />
+            <TextField fx:id="tflargo" layoutX="127.0" layoutY="335.0" prefHeight="25.0" prefWidth="89.0" />
+            <TextField fx:id="tfalto" layoutX="236.0" layoutY="335.0" prefHeight="25.0" prefWidth="101.0" />
+            <Text layoutX="67.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marca" />
+            <Text layoutX="72.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Año" />
+            <Text layoutX="236.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modelo" />
+            <Text layoutX="73.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CV" />
+            <Text layoutX="225.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kilometros" />
+            <Text layoutX="43.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ancho" />
+            <Text layoutX="150.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Largo" />
+            <Text layoutX="261.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alto" />
+            <Text fx:id="textotamcaja" layoutX="32.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tam Caja" />
+            <Text fx:id="textoNruedas" layoutX="43.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Num ruedas" />
+            <Text fx:id="textotipocarroceria" layoutX="33.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TipoCarroceria" />
+            <Text layoutX="32.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
